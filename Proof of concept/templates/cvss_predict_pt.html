@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-0lax{text-align:left;vertical-align:middle}
+        .tg .tg-0lar{text-align:right;vertical-align:middle}
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <title>CVSS Metrics Prediction Test</title>
+    </head>
+    <body>
+        <h1>CVSS Metrics Prediction Test</h1><BR><BR>
+        <strong>Vulnerability Textual Description (PT):</strong><BR>
+        {{ description_pt }}<BR><BR>
+        <strong>Vulnerability Textual Description (EN):</strong><BR>
+        {{ description_en }}<BR><BR>
+        
+        <table class="tg">
+          <thead>
+            <tr>
+              <th class="tg-0lax" colspan="3"><center><strong>CVSS v2</strong></center></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-0lax"><strong>Base Score / Severity</strong></td>
+              <td class="tg-0lax" colspan="2">{{ predict_vuln['CVSS2']['BaseScore'] }} / {{ predict_vuln['CVSS2']['Severity'] }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" rowspan="3"><strong>Access Vector (AV)</strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AV']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['AV']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AV']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['AV']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AV']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['AV']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AV']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['AV']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AV']['index_proba'] == 2 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['AV']['name_classes'][2] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AV']['index_proba'] == 2 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['AV']['predict_proba'][2] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" rowspan="3"><strong>Access Complexity (AC)</strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AC']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['AC']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AC']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['AC']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AC']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['AC']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AC']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['AC']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AC']['index_proba'] == 2 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['AC']['name_classes'][2] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AC']['index_proba'] == 2 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['AC']['predict_proba'][2] * 100) }}</td>
+            </tr>
+            
+            <tr>
+              <td class="tg-0lax" rowspan="3"><strong>Authentication (Au)</strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AU']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['AU']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AU']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['AU']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AU']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['AU']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AU']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['AU']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AU']['index_proba'] == 2 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['AU']['name_classes'][2] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['AU']['index_proba'] == 2 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['AU']['predict_proba'][2] * 100) }}</td>
+            </tr>
+            
+            <tr>
+              <td class="tg-0lax" rowspan="3"><strong>Confidentiality (C)</strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['C']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['C']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['C']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['C']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['C']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['C']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['C']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['C']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['C']['index_proba'] == 2 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['C']['name_classes'][2] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['C']['index_proba'] == 2 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['C']['predict_proba'][2] * 100) }}</td>
+            </tr>
+            
+            <tr>
+              <td class="tg-0lax" rowspan="3"><strong>Integrity (I)</strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['I']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['I']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['I']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['I']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['I']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['I']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['I']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['I']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['I']['index_proba'] == 2 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['I']['name_classes'][2] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['I']['index_proba'] == 2 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['I']['predict_proba'][2] * 100) }}</td>
+            </tr>
+            
+            <tr>
+              <td class="tg-0lax" rowspan="3"><strong>Availability (A)</strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['A']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['A']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['A']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['A']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['A']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['A']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['A']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['A']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['A']['index_proba'] == 2 else "" }}><strong>{{ predict_vuln['CVSS2']['metricas']['A']['name_classes'][2] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS2']['metricas']['A']['index_proba'] == 2 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['metricas']['A']['predict_proba'][2] * 100) }}</td>
+            </tr>
+            
+          </tbody>
+        </table>
+
+        <BR>
+        <strong>Vulnerability Analysis Textual Response (CVSS v2) (PT):</strong><BR>
+          {{ predict_vuln['CVSS2']['TextualResponse'] }}
+    
+        <BR><BR>
+        
+        <table class="tg">
+          <thead>
+            <tr>
+              <th class="tg-0lax" colspan="3"><center><strong>CVSS v3</strong></center></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-0lax"><strong>Base Score / Severity</strong></td>
+              <td class="tg-0lax" colspan="2">{{ predict_vuln['CVSS3']['BaseScore'] }} / {{ predict_vuln['CVSS3']['Severity'] }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" rowspan="4"><strong>Attack Vector (AV)</strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['AV']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['AV']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['AV']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['AV']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['AV']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['AV']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['AV']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['AV']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['AV']['index_proba'] == 2 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['AV']['name_classes'][2] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['AV']['index_proba'] == 2 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['AV']['predict_proba'][2] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['AV']['index_proba'] == 3 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['AV']['name_classes'][3] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['AV']['index_proba'] == 3 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['AV']['predict_proba'][3] * 100) }}</td>
+            </tr>
+            
+            <tr>
+              <td class="tg-0lax" rowspan="2"><strong>Attack Complexity (AC)</strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['AC']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['AC']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['AC']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['AC']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['AC']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['AC']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['AC']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['AC']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            
+            <tr>
+              <td class="tg-0lax" rowspan="3"><strong>Privileges Required (PR)</strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['PR']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['PR']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['PR']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['PR']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['PR']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['PR']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['PR']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['PR']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['PR']['index_proba'] == 2 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['PR']['name_classes'][2] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['PR']['index_proba'] == 2 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['PR']['predict_proba'][2] * 100) }}</td>
+            </tr>
+            
+            <tr>
+              <td class="tg-0lax" rowspan="2"><strong>User Interaction (UI)</strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['UI']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['UI']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['UI']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['UI']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['UI']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['UI']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['UI']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['UI']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            
+            <tr>
+              <td class="tg-0lax" rowspan="2"><strong>Scope (S)</strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['S']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['S']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['S']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['S']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['S']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['S']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['S']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['S']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            
+            <tr>
+              <td class="tg-0lax" rowspan="3"><strong>Confidentiality (C)</strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['C']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['C']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['C']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['C']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['C']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['C']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['C']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['C']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['C']['index_proba'] == 2 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['C']['name_classes'][2] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['C']['index_proba'] == 2 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['C']['predict_proba'][2] * 100) }}</td>
+            </tr>
+            
+            <tr>
+              <td class="tg-0lax" rowspan="3"><strong>Integrity (I)</strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['I']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['I']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['I']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['I']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['I']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['I']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['I']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['I']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['I']['index_proba'] == 2 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['I']['name_classes'][2] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['I']['index_proba'] == 2 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['I']['predict_proba'][2] * 100) }}</td>
+            </tr>
+            
+            <tr>
+              <td class="tg-0lax" rowspan="3"><strong>Availability (A)</strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['A']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['A']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['A']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['A']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['A']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['A']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['A']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['A']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['A']['index_proba'] == 2 else "" }}><strong>{{ predict_vuln['CVSS3']['metricas']['A']['name_classes'][2] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['CVSS3']['metricas']['A']['index_proba'] == 2 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['metricas']['A']['predict_proba'][2] * 100) }}</td>
+            </tr>
+            
+          </tbody>
+        </table>
+
+        <BR>
+          <strong>Vulnerability Analysis Textual Response (CVSS v3) (PT):</strong><BR>
+            {{ predict_vuln['CVSS3']['TextualResponse'] }}
+
+        <BR><BR>
+
+        <table class="tg">
+          <thead>
+            <tr>
+              <th class="tg-0lax" colspan="3"><center><strong>Patching Time</strong></center></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['PT']['index_proba'] == 0 else "" }}><strong>{{ predict_vuln['PT']['name_classes'][0] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['PT']['index_proba'] == 0 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['PT']['predict_proba'][0] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['PT']['index_proba'] == 1 else "" }}><strong>{{ predict_vuln['PT']['name_classes'][1] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['PT']['index_proba'] == 1 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['PT']['predict_proba'][1] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['PT']['index_proba'] == 2 else "" }}><strong>{{ predict_vuln['PT']['name_classes'][2] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['PT']['index_proba'] == 2 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['PT']['predict_proba'][2] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['PT']['index_proba'] == 3 else "" }}><strong>{{ predict_vuln['PT']['name_classes'][3] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['PT']['index_proba'] == 3 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['PT']['predict_proba'][3] * 100) }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['PT']['index_proba'] == 4 else "" }}><strong>{{ predict_vuln['PT']['name_classes'][4] }}<strong></td>
+              <td class="tg-0lax" {{ "bgcolor=yellow" if predict_vuln['PT']['index_proba'] == 4 else "" }}>{{ '{0:.2f}%'.format(predict_vuln['PT']['predict_proba'][4] * 100) }}</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <BR><h2>CVSS Terms Statistics</h2><BR>
+        
+        <table class="tg">
+          
+          <tbody>
+            <tr>
+              <td class="tg-0lax"><center><strong>Term</strong><center></td>
+              <td class="tg-0lax"><center><strong>CVSS v2</strong><center></td>
+              <td class="tg-0lax"><center><strong>CVSS v3</strong><center></td>
+              <td class="tg-0lax"><center><strong>Patching Time</strong><center></td>
+            </tr>
+            {%for term in predict_vuln['CVSS2']['Terms'] %}
+              <tr>
+              <td> {{ term['term'] }} </td>
+              {% if term['vectorized'] %}
+                <td><center><img src="{{url_for('static', filename='images/ok.png')}}" align="middle" width="15" height="15"/></center></td>
+              {% else %}
+                <td></td>
+              {% endif %}
+              {% set d_cvss3 = src_lst_dict(predict_vuln['CVSS3']['Terms'], term['term']) %}
+              {% if 'vectorized' in d_cvss3 %}
+                {% if d_cvss3['vectorized'] %}
+                  <td><center><img src="{{url_for('static', filename='images/ok.png')}}" align="middle" width="15" height="15"/></center></td>
+                {% else %}
+                  <td></td>
+                {% endif %}
+              {% else %}
+                <td></td>
+              {% endif %}
+              {% set d_pt = src_lst_dict(predict_vuln['PT']['Terms'], term['term']) %}
+              {% if 'vectorized' in d_pt %}
+                {% if d_pt['vectorized'] %}
+                  <td><center><img src="{{url_for('static', filename='images/ok.png')}}" align="middle" width="15" height="15"/></center></td>
+                {% else %}
+                  <td></td>
+                {% endif %}
+              {% else %}
+                <td></td>
+              {% endif %}
+              </tr>
+            {%endfor%}
+            <tr>
+              <td class="tg-0lax"><strong>Total Unigrams</strong></td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS2']['Statistics']['Unigram_Total'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS3']['Statistics']['Unigram_Total'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['PT']['Statistics']['Unigram_Total'] }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax"><strong>Processed Unigrams</strong></td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS2']['Statistics']['Unigram_Processed'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS3']['Statistics']['Unigram_Processed'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['PT']['Statistics']['Unigram_Processed'] }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax"><strong>Processed Unigrams (%)</strong></td>
+              <td class="tg-0lar">{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['Statistics']['Unigram_Perc_Processed'] * 100) }}</td>
+              <td class="tg-0lar">{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['Statistics']['Unigram_Perc_Processed'] * 100) }}</td>
+              <td class="tg-0lar">{{ '{0:.2f}%'.format(predict_vuln['PT']['Statistics']['Unigram_Perc_Processed'] * 100) }}</td>
+            </tr>
+
+            <tr>
+              <td class="tg-0lax"><strong>Total Bigrams</strong></td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS2']['Statistics']['Bigram_Total'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS3']['Statistics']['Bigram_Total'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['PT']['Statistics']['Bigram_Total'] }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax"><strong>Processed Bigrams</strong></td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS2']['Statistics']['Bigram_Processed'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS3']['Statistics']['Bigram_Processed'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['PT']['Statistics']['Bigram_Processed'] }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax"><strong>Processed Bigrams (%)</strong></td>
+              <td class="tg-0lar">{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['Statistics']['Bigram_Perc_Processed'] * 100) }}</td>
+              <td class="tg-0lar">{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['Statistics']['Bigram_Perc_Processed'] * 100) }}</td>
+              <td class="tg-0lar">{{ '{0:.2f}%'.format(predict_vuln['PT']['Statistics']['Bigram_Perc_Processed'] * 100) }}</td>
+            </tr>
+
+            <tr>
+              <td class="tg-0lax"><strong>Total Trigrams</strong></td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS2']['Statistics']['Trigram_Total'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS3']['Statistics']['Trigram_Total'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['PT']['Statistics']['Trigram_Total'] }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax"><strong>Processed Trigrams</strong></td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS2']['Statistics']['Trigram_Processed'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS3']['Statistics']['Trigram_Processed'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['PT']['Statistics']['Trigram_Processed'] }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax"><strong>Processed Trigrams (%)</strong></td>
+              <td class="tg-0lar">{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['Statistics']['Trigram_Perc_Processed'] * 100) }}</td>
+              <td class="tg-0lar">{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['Statistics']['Trigram_Perc_Processed'] * 100) }}</td>
+              <td class="tg-0lar">{{ '{0:.2f}%'.format(predict_vuln['PT']['Statistics']['Trigram_Perc_Processed'] * 100) }}</td>
+            </tr>
+
+            <tr>
+              <td class="tg-0lax"><strong>Total Terms</strong></td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS2']['Statistics']['Terms_Total'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS3']['Statistics']['Terms_Total'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['PT']['Statistics']['Terms_Total'] }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax"><strong>Processed Terms</strong></td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS2']['Statistics']['Terms_Processed'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['CVSS3']['Statistics']['Terms_Processed'] }}</td>
+              <td class="tg-0lar">{{ predict_vuln['PT']['Statistics']['Terms_Processed'] }}</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax"><strong>Processed Terms (%)</strong></td>
+              <td class="tg-0lar">{{ '{0:.2f}%'.format(predict_vuln['CVSS2']['Statistics']['Terms_Perc_Processed'] * 100) }}</td>
+              <td class="tg-0lar">{{ '{0:.2f}%'.format(predict_vuln['CVSS3']['Statistics']['Terms_Perc_Processed'] * 100) }}</td>
+              <td class="tg-0lar">{{ '{0:.2f}%'.format(predict_vuln['PT']['Statistics']['Terms_Perc_Processed'] * 100) }}</td>
+            </tr>
+            
+          </tbody>
+        </table>
+    </body>
+</html>

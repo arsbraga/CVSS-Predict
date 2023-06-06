@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CVSS Metrics Prediction Test</title>
+    </head>
+    <body>
+        <h1>CVSS Metrics Prediction Test</h1><BR>
+        <form method="post" action="/cvss_predict_en" class="border p-4 mt-2">
+            {{ vulnerability_form_en.csrf_token }}
+            <!--<fieldset>-->
+            {{ vulnerability_form_en.description_en.label(class="form-control-label") }}
+            <BR>
+            {{ vulnerability_form_en.description_en(class="form-control", cols="100", rows="5") }}
+            <BR>
+            <!--</fieldset>-->
+            {{ vulnerability_form_en.send(onclick="loading();") }}
+        </form>
+        <form method="post" action="/cvss_predict_pt" class="border p-4 mt-2">
+            {{ vulnerability_form_pt.csrf_token }}
+            <!--<fieldset>-->
+            {{ vulnerability_form_pt.description_pt.label(class="form-control-label") }}
+            <BR>
+            {{ vulnerability_form_pt.description_pt(class="form-control", cols="100", rows="5") }}
+            <BR>
+            <!--</fieldset>-->
+            {{ vulnerability_form_pt.send(onclick="loading();") }}
+        </form>
+        <!--<form>
+            <label for="description">Vulnerability Description</label><br />
+            <textarea cols="100" rows="3" id="description"></textarea><br />
+            <button type="submit" value="Submit">Submit</button>
+        </form>-->
+
+    </body>
+</html>
