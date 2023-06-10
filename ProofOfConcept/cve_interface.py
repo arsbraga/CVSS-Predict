@@ -37,6 +37,8 @@ def index():
 def cvss_predict_en():
   vulnerability_form_en = VulnerabilityForm_en()
   if vulnerability_form_en.validate_on_submit() and ('send' in request.form):
+    vectorizer2, vectorizer3, vectorizerPT = cve_classify.LoadVectorizers()
+    models = cve_classify.LoadModels()
     predict_vuln = cve_classify.Predict(vulnerability_form_en.description_en.data, vectorizer2, vectorizer3, vectorizerPT, models)
     return render_template('cvss_predict_en.html', description_en=vulnerability_form_en.description_en.data, predict_vuln=predict_vuln)
   else:
@@ -46,6 +48,9 @@ def cvss_predict_en():
 def cvss_predict_pt():
   vulnerability_form_pt = VulnerabilityForm_pt()
   if vulnerability_form_pt.validate_on_submit() and ('send' in request.form):
+    package.install_from_path('languages/pt_en.argosmodel')
+    vectorizer2, vectorizer3, vectorizerPT = cve_classify.LoadVectorizers()
+    models = cve_classify.LoadModels()
     txt_en = translate.translate(vulnerability_form_pt.description_pt.data, 'pt', 'en')
     predict_vuln = cve_classify.Predict(txt_en, vectorizer2, vectorizer3, vectorizerPT, models)
     return render_template('cvss_predict_pt.html', description_en=txt_en, description_pt=vulnerability_form_pt.description_pt.data, predict_vuln=predict_vuln)
