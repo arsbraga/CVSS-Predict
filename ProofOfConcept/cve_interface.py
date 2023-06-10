@@ -51,10 +51,9 @@ def cvss_predict_pt():
     return render_template('cvss_predict_pt.html', description_en=txt_en, description_pt=vulnerability_form_pt.description_pt.data, predict_vuln=predict_vuln)
   else:
     return "An error ocurred. Please, try again."
-
-if __name__ == '__main__':
-  print("Carregando pacote de idiomas PT -> EN")
-  package.install_from_path('languages/pt_en.argosmodel')
-  vectorizer2, vectorizer3, vectorizerPT = cve_classify.LoadVectorizers()
-  models = cve_classify.LoadModels()
-  app.run(debug=True)
+  
+print("Carregando pacote de idiomas PT -> EN")
+package.install_from_path('languages/pt_en.argosmodel')
+vectorizer2, vectorizer3, vectorizerPT = cve_classify.LoadVectorizers()
+models = cve_classify.LoadModels()
+app.run(debug=True)
