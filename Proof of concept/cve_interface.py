@@ -57,4 +57,4 @@ if __name__ == '__main__':
   package.install_from_path('languages/pt_en.argosmodel')
   vectorizer2, vectorizer3, vectorizerPT = cve_classify.LoadVectorizers()
   models = cve_classify.LoadModels()
-  app.run(host='0.0.0.0', port=5000)
+  app.run(debug=True)
