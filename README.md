@@ -21,6 +21,10 @@ Os modelos são treinados a partir de textos em inglês. Logo, a descrição tex
 
 <h3>3 - Prova de Conceito:</h3>
 
+<div align="justify">
+A prova de conceito foi desenvolvida com base no algoritmo <i>Logistic Regression</i>. Nos testes conduzidos durante o mestrado, o esse algoritmo registrou o segundo melhor desempenho. No entanto, a diferença entre ele o <i>Random Forest</i>, que teve apresentou o melhor resultado, foi próxima a 1 ponto percentual. O que justificou a escolha do segundo melhor algoritmo foi a menor utilização de recursos computacionais (memória RAM e espaço de armazenamento para persistir o modelo) e menor tempo de execução, tanto para treinamento quanto para classificação. Um protótipo foi publicado em: <a>https://cvss-predict.azurewebsites.net/</a>.
+</div>
+
 <h4>3.1 - Baixar Arquivos CVE/NIST:</h4>
 
 <div align="justify">
