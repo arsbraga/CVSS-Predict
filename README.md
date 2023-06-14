@@ -14,9 +14,9 @@ Texto.
 <h3>2 - Requisitos:</h3>
 
 <div align="justify">
-O código deste projeto foi desenvolvido na linguagem Python 3.10. Para utilizar a base de dados completa das versões 2 e/ou 3 do <i>Common Vulnerability Scoring System</i> (CVSS), pode ser necessário ter mais de 8 GB de memória RAM disponíveis.
+  O código deste projeto foi desenvolvido na linguagem Python 3.10. Para utilizar a base de dados completa das versões 2 e/ou 3 do <i>Common Vulnerability Scoring System</i> (CVSS), pode ser necessário ter mais de 8 GB de memória RAM disponíveis.
   
-Os modelos são treinados a partir de textos em inglês. Logo, a descrição textual usada para realizar as predições devem, também, estar em inglês. No entanto, foi incluída a função de tradução do texto, a fim de permitir que o usuário digite a descrição textual da vulnerabilidade em português. O modelo de tradução PT -> EN pode ser encontrado no site <a>https://www.argosopentech.com/argospm/index/</a>.
+  Os modelos são treinados a partir de textos em inglês. Logo, a descrição textual usada para realizar as predições devem, também, estar em inglês. No entanto, foi incluída a função de tradução do texto, a fim de permitir que o usuário digite a descrição textual da vulnerabilidade em português. O modelo de tradução PT -> EN pode ser encontrado no site <a>https://www.argosopentech.com/argospm/index/</a>.
 </div>
 
 <h3>3 - Prova de Conceito:</h3>
