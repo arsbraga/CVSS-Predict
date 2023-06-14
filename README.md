@@ -8,14 +8,14 @@
 <h3>1 - Decrição do Projeto:</h3>
 
 <div align="justify">
-Texto.
+Em virtude do trabalho desenvolvido no âmbito da dissertação de mestrado, na área de Segurança de Redes, na Universidade Federal Fluminense (UFF) foram avaliados algoritmos, <i>datasets</i> e técnicas de <i>Machine Learning</i> (ML) e <i>Natural Language Processing</i> (NLP) para predição da severidade, <i>base score</i> e métricas do vetor CVSS de uma vulnerabilidade, a partir de sua descrição textual. Para isso, são propostas três formas de obtenção da severidade de uma vulnerabilidade: (i) severidade como saída do modelo de predição; (ii) severidade em função do <i>base score</i> predito; e (iii) severidade em função do <i>base score</i> calculado a partir das métricas do vetor CVSS. Há, também, um estudo sobre a viabilidade da predição do tempo de correção de vulnerabilidades.
 </div>
 
 <h3>2 - Requisitos:</h3>
 
 <div align="justify">
 O código deste projeto foi desenvolvido na linguagem Python 3.10. Para utilizar a base de dados completa das versões 2 e/ou 3 do <i>Common Vulnerability Scoring System</i> (CVSS), pode ser necessário ter mais de 8 GB de memória RAM disponíveis.
-<BR>
+
 Os modelos são treinados a partir de textos em inglês. Logo, a descrição textual usada para realizar as predições devem, também, estar em inglês. No entanto, foi incluída a função de tradução do texto, a fim de permitir que o usuário digite a descrição textual da vulnerabilidade em português. O modelo de tradução PT -> EN pode ser encontrado no site <a>https://www.argosopentech.com/argospm/index/</a>.
 </div>
 
