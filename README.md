@@ -28,8 +28,7 @@ A prova de conceito foi desenvolvida com base no algoritmo <i>Logistic Regressio
 <h4>3.1 - Baixar Arquivos CVE/NIST:</h4>
 
 <div align="justify">
-Os arquivos do NVD encontram-se no no site <a href="https://nvd.nist.gov/vuln/data-feeds#JSON_FEED">https://nvd.nist.gov/vuln/data-feeds#JSON_FEED</a>. O NIST disponibiliza informações desde 2002. Os arquivos são em formato <i>JavaScript Object Notation</i> (JSON). O <i>script</i>
-  baixar_cve_nist.sh
+Os arquivos do NVD encontram-se no no site <a href="https://nvd.nist.gov/vuln/data-feeds#JSON_FEED">https://nvd.nist.gov/vuln/data-feeds#JSON_FEED</a>. O NIST disponibiliza informações desde 2002. Os arquivos são em formato <i>JavaScript Object Notation</i> (JSON). O <i>script</i> <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/baixar_cve_nist.sh">baixar_cve_nist.sh</a>
 </div>
 
 <h4>3.2 - Compilar Datasets:</h4>
