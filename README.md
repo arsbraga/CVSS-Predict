@@ -8,13 +8,13 @@
 <h3>1 - Decrição do Projeto:</h3>
 
 <div align="justify">
-Em virtude do trabalho desenvolvido no âmbito da dissertação de mestrado, na área de Segurança de Redes, na Universidade Federal Fluminense (UFF) foram avaliados algoritmos, <i>datasets</i> e técnicas de <i>Machine Learning</i> (ML) e <i>Natural Language Processing</i> (NLP) para predição da severidade, <i>base score</i> e métricas do vetor CVSS de uma vulnerabilidade, a partir de sua descrição textual. Para isso, são propostas três formas de obtenção da severidade de uma vulnerabilidade: (i) severidade como saída do modelo de predição; (ii) severidade em função do <i>base score</i> predito; e (iii) severidade em função do <i>base score</i> calculado a partir das métricas do vetor CVSS. Há, também, um estudo sobre a viabilidade da predição do tempo de correção de vulnerabilidades.
+Em virtude do trabalho desenvolvido no âmbito da dissertação de mestrado, na área de Segurança de Redes, na Universidade Federal Fluminense (UFF) foram avaliados algoritmos, <i>datasets</i> e técnicas de <i>Machine Learning</i> (ML) e <i>Natural Language Processing</i> (NLP) para predição da severidade, <i>base score</i> e métricas do vetor <i>Common Vulnerability Scoring System</i> (CVSS) de uma vulnerabilidade, a partir de sua descrição textual. O treinamento é realizado a partir do repositório do governo dos EUA de dados de gerenciamento de vulnerabilidades, chamado de <i>National Vulnerability Database</i> (NVD), disponibilizado pelo <i>National Institute of Standards and Technology</i> (NIST). Para isso, são propostas três formas de obtenção da severidade de uma vulnerabilidade: (i) severidade como saída do modelo de predição; (ii) severidade em função do <i>base score</i> predito; e (iii) severidade em função do <i>base score</i> calculado a partir das métricas do vetor CVSS. Há, também, um estudo sobre a viabilidade da predição do tempo de correção de vulnerabilidades.
 </div>
 
 <h3>2 - Requisitos:</h3>
 
 <div align="justify">
-O código deste projeto foi desenvolvido na linguagem Python 3.10. Para utilizar a base de dados completa das versões 2 e/ou 3 do <i>Common Vulnerability Scoring System</i> (CVSS), pode ser necessário ter mais de 8 GB de memória RAM disponíveis.
+O código deste projeto foi desenvolvido na linguagem Python 3.10. Para utilizar a base de dados completa das versões 2 e/ou 3 do CVSS, pode ser necessário ter mais de 8 GB de memória RAM disponíveis.
 
 Os modelos são treinados a partir de textos em inglês. Logo, a descrição textual usada para realizar as predições devem, também, estar em inglês. No entanto, foi incluída a função de tradução do texto, a fim de permitir que o usuário digite a descrição textual da vulnerabilidade em português. O modelo de tradução PT -> EN pode ser encontrado no site <a href="https://www.argosopentech.com/argospm/index/">https://www.argosopentech.com/argospm/index/</a>.
 </div>
@@ -28,7 +28,8 @@ A prova de conceito foi desenvolvida com base no algoritmo <i>Logistic Regressio
 <h4>3.1 - Baixar Arquivos CVE/NIST:</h4>
 
 <div align="justify">
-Texto.
+Os arquivos do NVD encontram-se no no site <a href="https://nvd.nist.gov/vuln/data-feeds#JSON_FEED">https://nvd.nist.gov/vuln/data-feeds#JSON_FEED</a>. O NIST disponibiliza informações desde 2002. Os arquivos são em formato <i>JavaScript Object Notation</i> (JSON). O <i>script</i>
+  baixar_cve_nist.sh
 </div>
 
 <h4>3.2 - Compilar Datasets:</h4>
