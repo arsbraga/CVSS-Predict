@@ -36,27 +36,97 @@ Os arquivos do NVD encontram-se no no site <a href="https://nvd.nist.gov/vuln/da
 <div align="justify">
 O programa em Python <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/compilar_dataset.py">compilar_dataset.py</a> tem o objetivo de criar o arquivo "cvss.csv", no formato <i>Comma-Separated Values</i> (CSV), na pasta "<i>dataset</i>". O programa percorrerá todos os arquivos JSON do NVD extraindo as seguintes informações:
 <ul>
-  <li><b>CVE-ID: </b></li>
-  <li><b>Descrição: </b></li>
+  <li><b>CVE-ID: </b>Mapeado para o campo "CVE_ID" do arquivo CSV.</li>
+  <li><b>Descrição: </b>Mapeado para o campo "CVE_DESC" do arquivo CSV. Também é criado o campo "CVE_DESC_NLP", onde é gravada a descrição após o processamento do algoritmo de NLP.</li>
   <li><b>Métricas do vetor CVSS versão 2:</b></li>
     <ul>
-      <li><b><i>Access Vector</i> (AV): </b></li>
-      <li><b><i>Access Complexity</i> (AC): </b></li>
-      <li><b><i>Authentication</i> (Au): </b></li>
-      <li><b><i>Confidentiality Impact</i> (C): </b></li>
-      <li><b><i>Integrity Impact</i> (I): </b></li>
-      <li><b><i>Availability Impact</i> (A): </b></li>
+      <li><b><i>Access Vector</i> (AV): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+        <ul>
+          <li><b><i>Requires local access</i>: </b>0</li>
+          <li><b><i>Local Network accessible</i>: </b>1</li>
+          <li><b><i>Network accessible</i>: </b>2</li>
+        </ul>
+      <li><b><i>Access Complexity</i> (AC): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+        <ul>
+          <li><b><i>High</i>: </b>0</li>
+          <li><b><i>Medium</i>: </b>1</li>
+          <li><b><i>Low</i>: </b>2</li>
+        </ul>
+      <li><b><i>Authentication</i> (Au): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+        <ul>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+        </ul>
+      <li><b><i>Confidentiality Impact</i> (C): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+        <ul>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+        </ul>
+      <li><b><i>Integrity Impact</i> (I): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+        <ul>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+        </ul>
+      <li><b><i>Availability Impact</i> (A): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+        <ul>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+        </ul>
     </ul>
   <li><b>Métricas do vetor CVSS versão 3:</b></li>
     <ul>
-      <li><b><i>Attack Vector</i> (AV): </b></li>
-      <li><b><i>Attack Complexity</i> (AC): </b></li>
-      <li><b><i>Privileges Required</i> (PR): </b></li>
-      <li><b><i>User Interaction</i> (UI): </b></li>
-      <li><b><i>Scope</i> (S): </b></li>
-      <li><b><i>Confidentiality Impact</i> (C): </b></li>
-      <li><b><i>Integrity Impact</i> (I): </b></li>
-      <li><b><i>Availability Impact</i> (A): </b></li>
+      <li><b><i>Attack Vector</i> (AV): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+        <ul>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+        </ul>
+      <li><b><i>Attack Complexity</i> (AC): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+        <ul>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+        </ul>
+      <li><b><i>Privileges Required</i> (PR): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+        <ul>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+        </ul>
+      <li><b><i>User Interaction</i> (UI): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+        <ul>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+        </ul>
+      <li><b><i>Scope</i> (S): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+        <ul>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+        </ul>
+      <li><b><i>Confidentiality Impact</i> (C): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+        <ul>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+        </ul>
+      <li><b><i>Integrity Impact</i> (I): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+        <ul>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+        </ul>
+      <li><b><i>Availability Impact</i> (A): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+        <ul>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+          <li><b><i></i>: </b></li>
+        </ul>
     </ul>
 </ul>
 </div>
