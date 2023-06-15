@@ -28,13 +28,18 @@ A prova de conceito foi desenvolvida com base no algoritmo <i>Logistic Regressio
 <h4>3.1 - Baixar Arquivos CVE/NIST:</h4>
 
 <div align="justify">
-Os arquivos do NVD encontram-se no no site <a href="https://nvd.nist.gov/vuln/data-feeds#JSON_FEED">https://nvd.nist.gov/vuln/data-feeds#JSON_FEED</a>. O NIST disponibiliza informações desde 2002. Os arquivos são em formato <i>JavaScript Object Notation</i> (JSON). O <i>script</i> <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/baixar_cve_nist.sh">baixar_cve_nist.sh</a>
+Os arquivos do NVD encontram-se no no site <a href="https://nvd.nist.gov/vuln/data-feeds#JSON_FEED">https://nvd.nist.gov/vuln/data-feeds#JSON_FEED</a>. O NIST disponibiliza informações desde 2002. Os arquivos são em formato <i>JavaScript Object Notation</i> (JSON). O <i>script</i> <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/baixar_cve_nist.sh">baixar_cve_nist.sh</a> automatiza o <i>download</i> de todos os arquivos, salvando-os na pasta "<i>dataset</i>", já descompactados. Há um arquivo para cada ano.
 </div>
 
-<h4>3.2 - Compilar Datasets:</h4>
+<h4>3.2 - Compilar <i>Datasets</i>:</h4>
 
 <div align="justify">
-Texto.
+O programa em Python <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/compilar_dataset.py">compilar_dataset.py</a> tem o objetivo de criar o arquivo "cvss.csv", no formato <i>Comma-Separated Values</i> (CSV), na pasta "<i>dataset</i>". O programa percorrerá todos os arquivos JSON do NVD extraindo as seguintes informações:
+<ul>
+  <li><b>CVE-ID: </b></li>
+  <li>Segundo item da lista</li>
+  <li>Terceiro item da lista</li>
+</ul>
 </div>
 
 <h4>3.3 - Validação Cruzada:</h4>
