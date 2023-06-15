@@ -40,41 +40,41 @@ O programa em Python <a href="https://github.com/arsbraga/CVSS-Predict/blob/main
   <li><b>Descrição: </b>Mapeado para o campo "CVE_DESC" do arquivo CSV. Também é criado o campo "CVE_DESC_NLP", onde é gravada a descrição após o processamento do algoritmo de NLP.</li>
   <li><b>Métricas do vetor CVSS versão 2:</b></li>
     <ul>
-      <li><b><i>Access Vector</i> (AV): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+      <li><b><i>Access Vector</i> (AV): </b>Mapeado para o campo "CVSS2_AV" do arquivo CSV. Também é criado o campo "CVSS2_C_AV", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
         <ul>
-          <li><b><i>Requires local access</i>: </b>0</li>
-          <li><b><i>Local Network accessible</i>: </b>1</li>
-          <li><b><i>Network accessible</i>: </b>2</li>
+          <li><b><i>Requires Local Access</i>: </b>0</li>
+          <li><b><i>Local Network Accessible</i>: </b>1</li>
+          <li><b><i>Network Accessible</i>: </b>2</li>
         </ul>
-      <li><b><i>Access Complexity</i> (AC): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+      <li><b><i>Access Complexity</i> (AC): </b>Mapeado para o campo "CVSS2_AC" do arquivo CSV. Também é criado o campo "CVSS2_C_AC", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
         <ul>
           <li><b><i>High</i>: </b>0</li>
           <li><b><i>Medium</i>: </b>1</li>
           <li><b><i>Low</i>: </b>2</li>
         </ul>
-      <li><b><i>Authentication</i> (Au): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+      <li><b><i>Authentication</i> (Au): </b>Mapeado para o campo "CVSS2_AU" do arquivo CSV. Também é criado o campo "CVSS2_C_AU", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
         <ul>
-          <li><b><i></i>: </b></li>
-          <li><b><i></i>: </b></li>
-          <li><b><i></i>: </b></li>
+          <li><b><i>Requires Multiple Instances of Authentication</i>: </b>0</li>
+          <li><b><i>Requires Single Instance of Authentication</i>: </b>1</li>
+          <li><b><i>Requires no Authentication</i>: </b>2</li>
         </ul>
-      <li><b><i>Confidentiality Impact</i> (C): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+      <li><b><i>Confidentiality Impact</i> (C): </b>Mapeado para o campo "CVSS2_C" do arquivo CSV. Também é criado o campo "CVSS2_C_C", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
         <ul>
-          <li><b><i></i>: </b></li>
-          <li><b><i></i>: </b></li>
-          <li><b><i></i>: </b></li>
+          <li><b><i>None</i>: </b>0</li>
+          <li><b><i>Partial</i>: </b>1</li>
+          <li><b><i>Complete</i>: </b>2</li>
         </ul>
-      <li><b><i>Integrity Impact</i> (I): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+      <li><b><i>Integrity Impact</i> (I): </b>Mapeado para o campo "CVSS2_I" do arquivo CSV. Também é criado o campo "CVSS2_C_I", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
         <ul>
-          <li><b><i></i>: </b></li>
-          <li><b><i></i>: </b></li>
-          <li><b><i></i>: </b></li>
+          <li><b><i>None</i>: </b>0</li>
+          <li><b><i>Partial</i>: </b>1</li>
+          <li><b><i>Complete</i>: </b>2</li>
         </ul>
-      <li><b><i>Availability Impact</i> (A): </b>Mapeado para o campo "" do arquivo CSV. Também é criado o campo "", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
+      <li><b><i>Availability Impact</i> (A): </b>Mapeado para o campo "CVSS2_A" do arquivo CSV. Também é criado o campo "CVSS2_C_A", onde é gravado o código que será processado pelos algoritmos de ML, conforme a seguinte correlação:</li>
         <ul>
-          <li><b><i></i>: </b></li>
-          <li><b><i></i>: </b></li>
-          <li><b><i></i>: </b></li>
+          <li><b><i>None</i>: </b>0</li>
+          <li><b><i>Partial</i>: </b>1</li>
+          <li><b><i>Complete</i>: </b>2</li>
         </ul>
     </ul>
   <li><b>Métricas do vetor CVSS versão 3:</b></li>
