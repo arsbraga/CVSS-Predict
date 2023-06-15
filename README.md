@@ -37,8 +37,27 @@ Os arquivos do NVD encontram-se no no site <a href="https://nvd.nist.gov/vuln/da
 O programa em Python <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/compilar_dataset.py">compilar_dataset.py</a> tem o objetivo de criar o arquivo "cvss.csv", no formato <i>Comma-Separated Values</i> (CSV), na pasta "<i>dataset</i>". O programa percorrerá todos os arquivos JSON do NVD extraindo as seguintes informações:
 <ul>
   <li><b>CVE-ID: </b></li>
-  <li>Segundo item da lista</li>
-  <li>Terceiro item da lista</li>
+  <li><b>Descrição: </b></li>
+  <li><b>Métricas do vetor CVSS versão 2:</b></li>
+    <ul>
+      <li><b><i>Access Vector</i> (AV): </b></li>
+      <li><b><i>Access Complexity</i> (AC): </b></li>
+      <li><b><i>Authentication</i> (Au): </b></li>
+      <li><b><i>Confidentiality Impact</i> (C): </b></li>
+      <li><b><i>Integrity Impact</i> (I): </b></li>
+      <li><b><i>Availability Impact</i> (A): </b></li>
+    </ul>
+  <li><b>Métricas do vetor CVSS versão 3:</b></li>
+    <ul>
+      <li><b><i>Attack Vector</i> (AV): </b></li>
+      <li><b><i>Attack Complexity</i> (AC): </b></li>
+      <li><b><i>Privileges Required</i> (PR): </b></li>
+      <li><b><i>User Interaction</i> (UI): </b></li>
+      <li><b><i>Scope</i> (S): </b></li>
+      <li><b><i>Confidentiality Impact</i> (C): </b></li>
+      <li><b><i>Integrity Impact</i> (I): </b></li>
+      <li><b><i>Availability Impact</i> (A): </b></li>
+    </ul>
 </ul>
 </div>
 
