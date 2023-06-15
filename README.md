@@ -127,6 +127,7 @@ O programa em Python <a href="https://github.com/arsbraga/CVSS-Predict/blob/main
         </ul>
     </ul>
 </ul>
+Ressalta-se que os campos, no arquivo CSV, são delimitados pelo caracter trema (&uml;).
 </div>
 
 <h4>3.3 - Validação Cruzada:</h4>
