@@ -172,19 +172,21 @@ O arquivo <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfCon
   <ul>
     <li><b>Carregar "Vetorizadores" e Modelos</b>: Essas funções carregam os arquivos em memória;</li>
     <li><b>Tratar a Descrição Textual da Vulnerabilidade</b>: Processa a descrição textual de uma vulnerabilidade através de algoritmos de NLP;</li>
-    <li><b>"Vetorizador"</b>: Converte a descrição textual de uma vulnerabilidade em vetor de <i>features</i>, através da técnica TF-IDF. Essa função também retorna os termos (unigramas, bigramas ou trigramas) presentes na descrição, com o <i>flag</i> para indicar se o termo foi ou não processado pelo classificador;</li>
-    <li><b>Predição</b>: Esta função faz a predição de todas as métricas do vetor CVSS nas versões 2 e 3. Para cada classe, de cada métrica, é incluída a probalidade. A partir da classe com a maior probabilidade, de cada métrica, é calculado o <i>base score</i> e a severidade. Com base na documentação do CVSS, um texto é construído para descrever as predições obtidas. Para auxiliar o usuário na elaboração da descrição textual, esta função também compila as estatísticas referentes ao processamento dos unigramas, bigramas, trigramas e de todos os termos, em geral;</li>
+    <li><b>"Vetorizador"</b>: Converte a descrição textual de uma vulnerabilidade em vetor de <i>features</i>, através da técnica TF-IDF. Essa função também retorna os termos (unigramas, bigramas ou trigramas) presentes na descrição, com o <i>flag</i> para indicar se o termo foi ou não processado pelo classificador; e</li>
+    <li><b>Predição</b>: Esta função faz a predição de todas as métricas do vetor CVSS nas versões 2 e 3. Para cada classe, de cada métrica, é incluída a probalidade. A partir da classe com a maior probabilidade, de cada métrica, é calculado o <i>base score</i> e a severidade. Com base na documentação do CVSS, um texto é construído para descrever as predições obtidas. Para auxiliar o usuário na elaboração da descrição textual, esta função também compila as estatísticas referentes ao processamento dos unigramas, bigramas, trigramas e de todos os termos, em geral.</li>
   </ul>
 </div>
 
 <h4>3.6 - Interface Web:</h4>
 
 <div align="justify">
-Texto.
+A interface web foi desenvolvida utilizando o módulo <i>Flask</i>, do <i>Python</i>. O usuário tem a possibilidade de digitar a descrição textual da vulnerabilidade em inglês. Mas, também é possível digitar a descrição textual da vulnerabilidade em português. Nesse caso, o programa <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/cve_interface.py">cve_interface.py</a> é capaz de traduzir o texto para o inglês antes de submetê-lo ao algoritmo de predição.
+Para cada métrica, é exibida a probabilidade percentual de todas as classes. É marcada em amarelo a classe com a probabilidade mais alta, inclusive para o tempo de correção de vulnerabilidades. Além disso, é exibido um texto explicativo sobre a predição, com base na documentação do CVSS. Ao final da página, são exibidas as estatísticas referentes ao processamento dos unigramas, bigramas, trigramas e de todos os termos, em geral.
 </div>
 
 <h3>4 - Limitações</h3>
 
 <div align="justify">
-Texto.
+O código da prova de conceito foi concebido para funcionar localmente, sendo chamada pelo comando "python cve_interface.py" ou "python3 cve_interface.py". Para <i>deploy</i> em serviços de <i>cloud</i>, ou para execução através dos servidores "<i>Gunicorn</i>" ou "<i>Waitress</i>", são necessárias algumas intervenções no código.
+Nos testes conduzidos no âmbito do curso de mestrado da UFF, foi observada uma certa instabilidade no modelo. Um fator que possivelmente exerceu influência é a quantidade reduzida de amostras disponíveis para treinamento. Com uma quantidade maior de amostras, é possível que houvesse uma melhora no desempenho do modelo.
 </div>
