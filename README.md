@@ -165,7 +165,19 @@ Nesse ponto o programa converte as descrições das vulnerabilidades em uma matr
   </ul>
 </div>
 
-<h4>3.5 - Interface Web e Classificação (Predição):</h4>
+<h4>3.5 - Classificação (Predição):</h4>
+
+<div align="justify">
+O arquivo <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/cve_classify.py">cve_classify.py</a> é uma biblioteca que contém diversas funções para apoiar aplicações na predição das métricas do vetor CVSS, do <i>base score</i>, da severidade e do tempo de correção de uma vulnerabilidade. Em suma, as seguintes funções estão presentes na biblioteca:
+  <ul>
+    <li><b>Carregar "Vetorizadores" e Modelos</b>: Essas funções carregam os arquivos em memória;</li>
+    <li><b>Tratar a Descrição Textual da Vulnerabilidade</b>: Processa a descrição textual de uma vulnerabilidade através de algoritmos de NLP;</li>
+    <li><b>"Vetorizador"</b>: Converte a descrição textual de uma vulnerabilidade em vetor de <i>features</i>, através da técnica TF-IDF. Essa função também retorna os termos (unigramas, bigramas ou trigramas) presentes na descrição, com o <i>flag</i> para indicar se o termo foi ou não processado pelo classificador;</li>
+    <li><b>Predição</b>: Esta função faz a predição de todas as métricas do vetor CVSS nas versões 2 e 3. Para cada classe, de cada métrica, é incluída a probalidade. A partir da classe com a maior probabilidade, de cada métrica, é calculado o <i>base score</i> e a severidade. Com base na documentação do CVSS, um texto é construído para descrever as predições obtidas. Para auxiliar o usuário na elaboração da descrição textual, esta função também compila as estatísticas referentes ao processamento dos unigramas, bigramas, trigramas e de todos os termos, em geral;</li>
+  </ul>
+</div>
+
+<h4>3.6 - Interface Web:</h4>
 
 <div align="justify">
 Texto.
