@@ -153,16 +153,15 @@ Esse programa se limita a testar a estabilidade e o desempenho dos modelos.
 
 <div align="justify">
 O programa <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/cve_ia.py">cve_ia.py</a> é responsável por criar os modelos através do treinamento com base nos <i>datasets</i> gerados, conforme descrito anteriormente. Além desses <i>datasets</i>, também há o <i>dataset</i> relativo às aplicações de comunicação, armazenado no arquivo <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/dataset/cve_multimidia_patching_time.csv">cve_multimidia_patching_time.csv</a>, na pasta "<i>dataset</i>". Ele contém informações sobre o tempo necessário para correçao das vulnerabilidades, coletadas manualmente nos site de <i>security advisor</i> dos fabricantes.
-Nesse ponto o programa converte as descrições das vulnerabilidades em uma matriz de <i>features</i> TF-IDF. A partir de então, já é possível efetuar o treinamento, criando os modelos que serão utilizados para fazer as predições. Os seguintes arquivos são criados:
+Nesse ponto o programa converte as descrições das vulnerabilidades em uma matriz de <i>features</i> TF-IDF. A partir de então, já é possível efetuar o treinamento, criando os modelos que serão utilizados para fazer as predições, conforme a seguir:
   <ul>
     <li><b>"Vetorizador"</b>: São criados três "vetorizadores" (ou conversor de descrições de vulnerabilidades em matriz de <i>features</i> TF-IDF). Um para a vesão 2 do CVSS ("vectorizer_CVSS2.tfidf"), um para a vesão 3 do CVSS ("vectorizer_CVSS3.tfidf") e um para as aplicações de comunicação ("vectorizer_PT.tfidf"). Todos esses arquivos são salvos na pasta "modelos";</li>
-    <li><b>Modelos</b>: São criados os modelos, baseados no algoritmo <i>Logistic Regression</i>, para todas as métricas das vesões 2 e 3 do CVSS:</li>
+    <li><b>Modelos</b>: São criados os modelos para todas as métricas das vesões 2 e 3 do CVSS, baseados no algoritmo <i>Logistic Regression</i>, e o modelo para predição do tempo de correção de vulnerabilidade, baseado no algoritmo <i>Support Vector Machine</i> (SVM):</li>
       <ul>
-        <li><b>CVSS versão 2</b>: Para a versão 2 do CVSS são criados os seguintes modelos, na pasta "modelos": "classifier_CVSS2_C_AC.model", "classifier_CVSS2_C_A.model", "classifier_CVSS2_C_AU.model", "classifier_CVSS2_C_AV.model", "classifier_CVSS2_C_C.model" e "classifier_CVSS2_C_I.model"</li>
-        <li><b>CVSS versão 3</b>: Para a versão 3 do CVSS são criados os seguintes modelos, na pasta "modelos": "classifier_CVSS3_C_AC.model", "classifier_CVSS3_C_A.model", "classifier_CVSS3_C_AV.model", "classifier_CVSS3_C_C.model", "classifier_CVSS3_C_I.model", "classifier_CVSS3_C_PR.model", "classifier_CVSS3_C_S.model" e "classifier_CVSS3_C_UI.model"</li>
+        <li><b>CVSS versão 2</b>: Para a versão 2 do CVSS são criados os seguintes modelos, na pasta "modelos": "classifier_CVSS2_C_AC.model", "classifier_CVSS2_C_A.model", "classifier_CVSS2_C_AU.model", "classifier_CVSS2_C_AV.model", "classifier_CVSS2_C_C.model" e "classifier_CVSS2_C_I.model";</li>
+        <li><b>CVSS versão 3</b>: Para a versão 3 do CVSS são criados os seguintes modelos, na pasta "modelos": "classifier_CVSS3_C_AC.model", "classifier_CVSS3_C_A.model", "classifier_CVSS3_C_AV.model", "classifier_CVSS3_C_C.model", "classifier_CVSS3_C_I.model", "classifier_CVSS3_C_PR.model", "classifier_CVSS3_C_S.model" e "classifier_CVSS3_C_UI.model"; e</li>
+        <li><b>Tempo de Correção de Vulnerabilidades</b>: Para a predição do tempo de correção de vulnerabilidades é criado o modelo "classifier_PT.model", na pasta "modelos".</li>
       </ul>
-    <li><b><i></i></b>: </li>
-    <li><b><i></i></b>: </li>
   </ul>
 </div>
 
