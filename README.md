@@ -182,6 +182,7 @@ O arquivo <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfCon
 
 <div align="justify">
 A interface web foi desenvolvida utilizando o módulo <i>Flask</i>, do <i>Python</i>. O usuário tem a possibilidade de digitar a descrição textual da vulnerabilidade em inglês. Mas, também é possível digitar a descrição textual da vulnerabilidade em português. Nesse caso, o programa <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/cve_interface.py">cve_interface.py</a> é capaz de traduzir o texto para o inglês antes de submetê-lo ao algoritmo de predição. Ressalta-se que a predição é realizada localmente, usando o módulo do <i>Python</i> <a href="https://pypi.org/project/argostranslate/1.4.0/">argostranslate</a>.
+  
 Para cada métrica, é exibida a probabilidade percentual de todas as classes. É marcada em amarelo a classe com a probabilidade mais alta, inclusive para o tempo de correção de vulnerabilidades. Além disso, é exibido um texto explicativo sobre a predição, com base na documentação do CVSS. Ao final da página, são exibidas as estatísticas referentes ao processamento dos unigramas, bigramas, trigramas e de todos os termos, em geral.
 </div>
 
