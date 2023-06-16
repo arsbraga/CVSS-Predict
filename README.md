@@ -23,6 +23,7 @@ Os modelos são treinados a partir de textos em inglês. Logo, a descrição tex
 
 <div align="justify">
 A prova de conceito foi desenvolvida com base no algoritmo <i>Logistic Regression</i>. Nos testes conduzidos durante o mestrado, o esse algoritmo registrou o segundo melhor desempenho. No entanto, a diferença entre ele o <i>Random Forest</i>, que teve apresentou o melhor resultado, foi próxima a 1 ponto percentual. O que justificou a escolha do segundo melhor algoritmo foi a menor utilização de recursos computacionais (memória RAM e espaço de armazenamento para persistir o modelo) e menor tempo de execução, tanto para treinamento quanto para classificação.
+  
 Um protótipo foi publicado em: <a href="https://cvss-predict.azurewebsites.net/">https://cvss-predict.azurewebsites.net/</a>. Considerando que a conta do Azure utilizada é gratuita, o servidor "desliga" o sistema após certo tempo de inatividade. Dessa forma, o primeiro acesso pode ser lento, pois a plataforma irá "ligar" o sistema nesse momento. A primeira consulta também pode ser lenta, porque o aplicativo vai carregar os modelos nesse momento. Enquanto o aplicativo estiver "ligado", o acesso e as consultas serão mais rápidas.
 </div>
 
@@ -154,6 +155,7 @@ Esse programa se limita a testar a estabilidade e o desempenho dos modelos.
 
 <div align="justify">
 O programa <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/cve_ia.py">cve_ia.py</a> é responsável por criar os modelos através do treinamento com base nos <i>datasets</i> gerados, conforme descrito anteriormente. Além desses <i>datasets</i>, também há o <i>dataset</i> relativo às aplicações de comunicação, armazenado no arquivo <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/dataset/cve_multimidia_patching_time.csv">cve_multimidia_patching_time.csv</a>, na pasta "<i>dataset</i>". Ele contém informações sobre o tempo necessário para correçao das vulnerabilidades, coletadas manualmente nos site de <i>security advisor</i> dos fabricantes.
+  
 Nesse ponto o programa converte as descrições das vulnerabilidades em uma matriz de <i>features</i> TF-IDF. A partir de então, já é possível efetuar o treinamento, criando os modelos que serão utilizados para fazer as predições, conforme a seguir:
   <ul>
     <li><b>"Vetorizador"</b>: São criados três "vetorizadores" (ou conversor de descrições de vulnerabilidades em matriz de <i>features</i> TF-IDF). Um para a vesão 2 do CVSS ("vectorizer_CVSS2.tfidf"), um para a vesão 3 do CVSS ("vectorizer_CVSS3.tfidf") e um para as aplicações de comunicação ("vectorizer_PT.tfidf"). Todos esses arquivos são salvos na pasta "modelos";</li>
@@ -190,5 +192,6 @@ Para cada métrica, é exibida a probabilidade percentual de todas as classes. �
 
 <div align="justify">
 O código da prova de conceito foi concebido para funcionar localmente, sendo chamada pelo comando "python cve_interface.py" ou "python3 cve_interface.py". Para <i>deploy</i> em serviços de <i>cloud</i>, ou para execução através dos servidores "<i>Gunicorn</i>" ou "<i>Waitress</i>", são necessárias algumas intervenções no código.
+  
 Nos testes conduzidos no âmbito do curso de mestrado da UFF, foi observada uma certa instabilidade no modelo. Um fator que possivelmente exerceu influência é a quantidade reduzida de amostras disponíveis para treinamento. Com uma quantidade maior de amostras, é possível que houvesse uma melhora no desempenho do modelo.
 </div>
