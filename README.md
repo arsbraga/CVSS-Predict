@@ -146,6 +146,7 @@ Para os indicadores de desempenho <i>precision</i>, <i>recall</i> e <i>F1 score<
     <li><b><i>Macro</i></b>: calcula os indicadores de desempenho para cada classe e encontra sua média não ponderada. Não levando em consideração o desequilíbrio entre as classes; e</li>
     <li><b><i>Weighted</i></b>: calcula os indicadores de desempenho para cada classe e encontra sua média ponderada pelo suporte (o número de instâncias verdadeiras para cada classe). Equivalente ao '<i>Macro</i>', considerando o desequilíbrio entre as classes. O <i>recall</i> ponderado é igual a Acurácia.</li>
   </ul>
+Esse programa se limita a testar a estabilidade e o desempenho dos modelos.
 </div>
 
 <h4>3.4 - Criação dos Modelos (Aprendizado):</h4>
@@ -160,13 +161,7 @@ Texto.
 Texto.
 </div>
 
-<h3>4 - Datasets</h3>
-
-<div align="justify">
-Texto.
-</div>
-
-<h3>5 - Limitações</h3>
+<h3>4 - Limitações</h3>
 
 <div align="justify">
 Texto.
