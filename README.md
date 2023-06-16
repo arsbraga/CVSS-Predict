@@ -152,7 +152,7 @@ Esse programa se limita a testar a estabilidade e o desempenho dos modelos.
 <h4>3.4 - Criação dos Modelos (Aprendizado):</h4>
 
 <div align="justify">
-Texto.
+O programa <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/cve_ia.py">cve_ia.py</a> é responsável por criar os modelos através do treinamento com base nos <i>datasets</i> gerados, conforme descrito anteriormente. Além desses <i>datasets</i>, também há o <i>dataset</i> relativo às aplicações de comunicação, armazenado no arquivo <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/dataset/cve_multimidia_patching_time.csv">cve_multimidia_patching_time.csv</a>, na pasta "<i>dataset</i>". Ele contém informações sobre o tempo necessário para correçao das vulnerabilidades, coletadas manualmente nos site de <i>security advisor</i> dos fabricantes.
 </div>
 
 <h4>3.5 - Interface Web e Classificação (Predição):</h4>
