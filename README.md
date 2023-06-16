@@ -140,7 +140,7 @@ Inicialmente, a partir do arquivo "cvss.csv", o programa <a href="https://github
     <li><b><i>Recall</i></b>: representa a razão <b><i>(vp / vp + fn)</i></b>, onde <b><i>vp</i></b> é o número de verdadeiros positivos e <b><i>fn</i></b> o número de falsos negativos. O <i>recall</i> é a habilidade do classificador em encontrar todas as amostras positivas. Para problemas de classificação em que existem múltiplas classes, representa a média ponderada do <i>recall</i> de cada classe. O melhor valor é 1 e o pior valor é 0; e</li>
     <li><b><i>F1 score</i></b>: é a média harmônica de <i>precision</i> e <i>recall</i>. No caso problemas de classificação em que existem múltiplas classes, representa a média ponderada do <i>F1 score</i> de cada classe. O melhor valor é 1 e o pior valor é 0.</li>
   </ul>
-Para os indicadores de desempenho <i>precision</i>, </i>recall</i> e <i>F1 score</i>, são aplicadas três metodologias de cálculo:
+Para os indicadores de desempenho <i>precision</i>, <i>recall</i> e <i>F1 score</i>, são aplicadas três metodologias de cálculo:
   <ul>
     <li><b><i>Micro</i></b>: calcula os indicadores de desempenho globalmente, contando o total de verdadeiros positivos, falsos negativos e falsos positivos;</li>
     <li><b><i>Macro</i></b>: calcula os indicadores de desempenho para cada classe e encontra sua média não ponderada. Não levando em consideração o desequilíbrio entre as classes; e</li>
