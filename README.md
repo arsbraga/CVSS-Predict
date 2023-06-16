@@ -137,7 +137,7 @@ Inicialmente, a partir do arquivo "cvss.csv", o programa <a href="https://github
   <ul>
     <li><b>Acurácia<b>: para problemas de classificação em que existem múltiplas classes, representa percentual em que a predição das classes é correta, ou seja, é exatamente igual à real;</li>
 
-    <li><b><i>Precision}</b>: é a razão <math><mfrac><mrow><mn> vp </mn></mrow><mn> vp </mn><mo> + </mo><mn> fp </mn></mfrac></math>, onde $vp$ é o número de verdadeiros positivos e $fp$ o número de falsos positivos. <i>Precision</i> é a capacidade do classificador não rotular como positiva uma amostra que é negativa. Para problemas de classificação em que existem múltiplas classes, representa a média ponderada do <i>precision</i> de cada classe. O melhor valor é 1 e o pior valor é 0;</li>
+    <li><b><i>Precision}</b>: é a razão <img align=”middle” src=”http://latex.codecogs.com/gif.latex?\dpi{110} \left(\frac{vp}{vp + fp}\right)”/> $\left(\frac{vp}{vp + fp}\right)$, onde $vp$ é o número de verdadeiros positivos e $fp$ o número de falsos positivos. <i>Precision</i> é a capacidade do classificador não rotular como positiva uma amostra que é negativa. Para problemas de classificação em que existem múltiplas classes, representa a média ponderada do <i>precision</i> de cada classe. O melhor valor é 1 e o pior valor é 0;</li>
 
     <li><b><i>Recall</i><b>: representa a razão $\left(\frac{vp}{vp + fn}\right)$, onde $vp$ é o número de verdadeiros positivos e $fn$ o número de falsos negativos. O <i>recall</i> é a habilidade do classificador em encontrar todas as amostras positivas. Para problemas de classificação em que existem múltiplas classes, representa a média ponderada do <i>recall</i> de cada classe. O melhor valor é 1 e o pior valor é 0; e</li>
 
