@@ -133,7 +133,7 @@ Ressalta-se que os campos, no arquivo CSV, são delimitados pelo caracter trema 
 <h4>3.3 - Validação Cruzada:</h4>
 
 <div align="justify">
-Texto.
+Inicialmente, a partir do arquivo "cvss.csv", o programa <a href="https://github.com/arsbraga/CVSS-Predict/blob/main/ProofOfConcept/cve_cross_validation.py">cve_cross_validation.py</a> cria dois <i>datasets</i>: (i) somente vulnerabilidades que contenham análises baseadas na versão 2 do CVSS, salva no arquivo "cvss_v2.csv", na pasta "<i>dataset</i>"; e (ii) somente vulnerabilidades que contenham análises baseadas na versão 3 do CVSS, salva no arquivo "cvss_v3.csv", na pasta "<i>dataset</i>". Para cada métrica de cada um desses dois <i>datasets</i>, o programa seleciona cinco conjuntos de treinamento e validação, denominados <i>folds</i>. Para cada um desses cinco <i>folds</i> o programa treina o modelo a partir do conjunto de treinamento e faz a classificação a partir do conjunto de validação. É criado o arquivo validacao_cruzada.csv, na pasta "resultados", que armazenará os indicadores de desempenho de cada <i>fold</i> e a média de todos os <i>fold</i> em cada métrica do vetor CVSS. Os indicadores de desempenho compilados são:
 </div>
 
 <h4>3.4 - Criação dos Modelos (Aprendizado):</h4>
