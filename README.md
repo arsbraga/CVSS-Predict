@@ -137,6 +137,8 @@ Inicialmente, a partir do arquivo "cvss.csv", o programa <a href="https://github
   <ul>
     <li><b>Acurácia</b>: para problemas de classificação em que existem múltiplas classes, representa percentual em que a predição das classes é correta, ou seja, é exatamente igual à real;</li>
     
+    <li><b><i>Precision</i></b>: é a razão <b><i>(vp / vp + fp)</i></b>, onde <b><i>vp</i></b> é o número de verdadeiros positivos e <b><i>fp</i></b> o número de falsos positivos. <i>Precision</i> é a capacidade do classificador não rotular como positiva uma amostra que é negativa. Para problemas de classificação em que existem múltiplas classes, representa a média ponderada do <i>precision</i> de cada classe. O melhor valor é 1 e o pior valor é 0;</li>
+
     
   </ul>
 </div>
